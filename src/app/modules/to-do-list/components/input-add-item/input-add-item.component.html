@@ -1,0 +1,14 @@
+<header [ngClass]="{'has-items': inputListItems.length}"
+>
+@if(inputListItems.length){
+    <h1>Minha lista de tarefas</h1>
+}
+<div [ngClass]="{'Container': !inputListItems.length}">
+    <label class="input-label-text" for="inputValue" [ngClass]="{'remove-margim-bottom': !inputListItems.length}">
+        <input type="text" (keyup.enter)="focusAndAddItem(inputText.value)" placeholder="Adicione uma nova tarefa" id="inputValue" autofocus #inputText>
+
+        <button class="btn btn-primary-circle" title="Adicionar uma nova tarefa" (click)="focusAndAddItem(inputText.value)"></button>
+    </label>
+</div>
+</header>
+
